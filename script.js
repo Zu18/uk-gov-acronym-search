@@ -54,8 +54,8 @@ function formatAcronym(acronym) {
     return acronym.trim().toLowerCase();
 }
 
-function searchAcronym() {
-    console
+function searchAcronym(event) {
+    event.preventDefault();
     const searchBox = document.getElementById('searchBox');
     const result = document.getElementById('result');
     const searchTerm = formatAcronym(searchBox.value);
@@ -66,4 +66,8 @@ function searchAcronym() {
     } else {
         result.textContent = "No such acronym exists.";
     }
+
+    document.getElementById('searchForm').reset();
 }
+
+document.getElementById('searchForm').addEventListener('submit', searchAcronym);

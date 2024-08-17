@@ -9,8 +9,10 @@
 <body>
   <div>
     <h1>UK Government acronym search</h1>
-    <input type="text" id="searchBox" placeholder="Enter an acronym...">
-    <button onclick="searchAcronym()">Search</button>
+    <form id="searchForm">
+        <input type="text" id="searchBox" placeholder="Enter acronym">
+        <button type="submit">Search</button>
+    </form>
     <p id="result"></p>
   </div>
   <script src="script.js"></script>
