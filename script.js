@@ -50,14 +50,19 @@ const acronyms = {
     "WG": "Welsh Government"
 };
 
+function formatAcronym(acronym) {
+    return acronym.trim().toLowerCase();
+}
+
 function searchAcronym() {
-    console.log("I was clicked")
+    console
     const searchBox = document.getElementById('searchBox');
     const result = document.getElementById('result');
-    const acronym = searchBox.value.trim();
+    const searchTerm = formatAcronym(searchBox.value);
+    const match = Object.keys(acronyms).find(key => formatAcronym(key) === searchTerm);
 
-    if (acronym in acronyms) {
-        result.textContent = acronyms[acronym];
+    if (match) {
+        result.textContent = acronyms[match];
     } else {
         result.textContent = "No such acronym exists.";
     }
