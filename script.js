@@ -59,10 +59,15 @@ function searchAcronym(event) {
     const searchBox = document.getElementById('searchBox');
     const result = document.getElementById('result');
     const searchTerm = formatAcronym(searchBox.value);
-    const match = Object.keys(acronyms).find(key => formatAcronym(key) === searchTerm);
+    
+    if (searchTerm === "") {
+        result.textContent = "Please enter an acronym.";
+        return; 
+    }
+    const matches = Object.keys(acronyms).filter(key => formatAcronym(key).includes(searchTerm));
 
-    if (match) {
-        result.textContent = acronyms[match];
+    if (matches.length > 0) {
+        result.innerHTML = matches.map(match => `<p>${match}: ${acronyms[match]}</p>`).join('');
     } else {
         result.textContent = "No such acronym exists.";
     }

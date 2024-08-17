@@ -2,8 +2,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     background-color: #f4f4f9;
+    margin-top: 30px;
 }
 
 .form-container {
@@ -36,5 +36,5 @@ button:hover {
 }
 
 p {
-    margin-top: 20px;
+    margin-top: 10px;
 }
