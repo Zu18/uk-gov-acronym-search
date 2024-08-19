@@ -10,7 +10,7 @@ To run the application locally, follow these steps:
 
 First, clone the repository to your local machine.
 
-`git clone <repository-url>`
+`git clone git@github.com:Zu18/uk-gov-acronym-search.git`
 
 ### 2. Navigate to the project directory
 
